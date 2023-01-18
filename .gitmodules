@@ -1,0 +1,3 @@
+[submodule "apps/erpnext"]
+	path = apps/erpnext
+	url = https://github.com/shivakaushik007/ERP-Project.git

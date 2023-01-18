@@ -1,0 +1,60 @@
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230110_180003-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-10 18:00:04.170429
+Config  : ./erpapp.com/private/backups/20230110_180003-erpapp_com-site_config_backup.json 180.0B
+Database: ./erpapp.com/private/backups/20230110_180003-erpapp_com-database.sql.gz         1.2MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230111_120002-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-11 12:00:03.571319
+Config  : ./erpapp.com/private/backups/20230111_120002-erpapp_com-site_config_backup.json 180.0B
+Database: ./erpapp.com/private/backups/20230111_120002-erpapp_com-database.sql.gz         1.2MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230111_180003-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-11 18:00:04.449879
+Config  : ./erpapp.com/private/backups/20230111_180003-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230111_180003-erpapp_com-database.sql.gz         1.2MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230112_120003-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-12 12:00:05.151233
+Config  : ./erpapp.com/private/backups/20230112_120003-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230112_120003-erpapp_com-database.sql.gz         1.2MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230112_180003-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-12 18:00:04.272686
+Config  : ./erpapp.com/private/backups/20230112_180003-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230112_180003-erpapp_com-database.sql.gz         1.3MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230116_120002-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-16 12:00:04.220504
+Config  : ./erpapp.com/private/backups/20230116_120002-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230116_120002-erpapp_com-database.sql.gz         1.3MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230116_180002-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-16 18:00:03.873425
+Config  : ./erpapp.com/private/backups/20230116_180002-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230116_180002-erpapp_com-database.sql.gz         1.3MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230117_120003-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-17 12:00:04.812644
+Config  : ./erpapp.com/private/backups/20230117_120003-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230117_120003-erpapp_com-database.sql.gz         1.3MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230117_180002-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-17 18:00:04.034782
+Config  : ./erpapp.com/private/backups/20230117_180002-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230117_180002-erpapp_com-database.sql.gz         1.3MiB
+Backup for Site erpapp.com has been successfully completed
+self=$$;  ( mysqldump --single-transaction --quick --lock-tables=false -u _488727f8b9b6d21b -p********** _488727f8b9b6d21b -h 127.0.0.1 -P 3306   || kill $self )  | /usr/bin/gzip >> ./erpapp.com/private/backups/20230118_120002-erpapp_com-database.sql.gz
+
+Backup Summary for erpapp.com at 2023-01-18 12:00:03.685956
+Config  : ./erpapp.com/private/backups/20230118_120002-erpapp_com-site_config_backup.json 294.0B
+Database: ./erpapp.com/private/backups/20230118_120002-erpapp_com-database.sql.gz         1.3MiB
+Backup for Site erpapp.com has been successfully completed

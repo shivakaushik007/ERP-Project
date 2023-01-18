@@ -1,0 +1,158 @@
+2023-01-16 12:33:35,422 ERROR frappe Could not take error snapshot: Please Authorize OAuth.
+Site: erpapp.com
+Form Dict: {'doc': '{"docstatus":0,"doctype":"User","name":"new-user-3","__islocal":1,"__unsaved":1,"owner":"Administrator","enabled":1,"language":"en","send_welcome_email":1,"unsubscribed":0,"desk_theme":"Light","mute_sounds":0,"logout_all_sessions":1,"document_follow_notify":0,"document_follow_frequency":"Daily","follow_created_documents":0,"follow_commented_documents":0,"follow_liked_documents":0,"follow_assigned_documents":0,"follow_shared_documents":0,"thread_notify":1,"send_me_a_copy":0,"allowed_in_mentions":1,"simultaneous_sessions":1,"user_type":"System User","bypass_restrict_ip_check_if_2fa_enabled":0,"__run_link_triggers":1,"email":"testuser2@gmail.com","first_name":"CRM Status ","last_name":"Manager"}', 'cmd': 'frappe.client.save'}
+Traceback (most recent call last):
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/app.py", line 69, in application
+    response = frappe.api.handle()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/api.py", line 54, in handle
+    return frappe.handler.handle()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/handler.py", line 45, in handle
+    data = execute_cmd(cmd)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/handler.py", line 83, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 1590, in call
+    return fn(*args, **newargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/client.py", line 225, in save
+    doc.save()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 304, in save
+    return self._save(*args, **kwargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 326, in _save
+    return self.insert()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 284, in insert
+    self.run_post_save_methods()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 1076, in run_post_save_methods
+    self.run_method("on_update")
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 908, in run_method
+    out = Document.hook(fn)(self, *args, **kwargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 1258, in composer
+    return composed(self, method, *args, **kwargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 1240, in runner
+    add_to_return_value(self, fn(self, *args, **kwargs))
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/model/document.py", line 905, in fn
+    return method_object(*args, **kwargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 122, in on_update
+    self.send_password_notification(self.__new_password)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 266, in send_password_notification
+    self.send_welcome_mail_to_user()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 337, in send_welcome_mail_to_user
+    self.send_login_mail(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 369, in send_login_mail
+    frappe.sendmail(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 711, in sendmail
+    builder.process(send_now=now)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 660, in process
+    send_now and q.send()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 141, in send
+    ctx.smtp_session.sendmail(from_addr=self.sender, to_addrs=recipient.recipient, msg=message)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 257, in smtp_session
+    return self.smtp_server.session
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/smtp.py", line 115, in session
+    Oauth(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 36, in __init__
+    self._validate()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 45, in _validate
+    frappe.throw(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 525, in throw
+    msgprint(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 493, in msgprint
+    _raise_exception()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 442, in _raise_exception
+    raise raise_exception(msg)
+frappe.email.oauth.OAuthenticationError: Please Authorize OAuth.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/utils/error.py", line 47, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/utils/error.py", line 105, in get_snapshot
+    vars = cgitb.scanvars(reader, frame, locals)
+  File "/usr/lib/python3.10/cgitb.py", line 88, in scanvars
+    value = getattr(parent, token, __UNDEF__)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 257, in smtp_session
+    return self.smtp_server.session
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/smtp.py", line 115, in session
+    Oauth(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 36, in __init__
+    self._validate()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 45, in _validate
+    frappe.throw(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 525, in throw
+    msgprint(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 493, in msgprint
+    _raise_exception()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 442, in _raise_exception
+    raise raise_exception(msg)
+frappe.email.oauth.OAuthenticationError: Please Authorize OAuth.
+2023-01-16 16:45:50,006 ERROR frappe Could not take error snapshot: Please Authorize OAuth.
+Site: erpapp.com
+Form Dict: {'user': 'testuser2@gmail.com', 'cmd': 'frappe.core.doctype.user.user.reset_password'}
+Traceback (most recent call last):
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/app.py", line 69, in application
+    response = frappe.api.handle()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/api.py", line 54, in handle
+    return frappe.handler.handle()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/handler.py", line 45, in handle
+    data = execute_cmd(cmd)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/handler.py", line 83, in execute_cmd
+    return frappe.call(method, **frappe.form_dict)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 1590, in call
+    return fn(*args, **newargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/rate_limiter.py", line 150, in wrapper
+    return frappe.call(fun, **frappe.form_dict or kwargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 1590, in call
+    return fn(*args, **newargs)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 889, in reset_password
+    user.reset_password(send_email=True)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 295, in reset_password
+    self.password_reset_mail(link)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 320, in password_reset_mail
+    self.send_login_mail(_("Password Reset"), "password_reset", {"link": link}, now=True)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 369, in send_login_mail
+    frappe.sendmail(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 711, in sendmail
+    builder.process(send_now=now)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 660, in process
+    send_now and q.send()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 141, in send
+    ctx.smtp_session.sendmail(from_addr=self.sender, to_addrs=recipient.recipient, msg=message)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 257, in smtp_session
+    return self.smtp_server.session
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/smtp.py", line 115, in session
+    Oauth(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 36, in __init__
+    self._validate()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 45, in _validate
+    frappe.throw(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 525, in throw
+    msgprint(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 493, in msgprint
+    _raise_exception()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 442, in _raise_exception
+    raise raise_exception(msg)
+frappe.email.oauth.OAuthenticationError: Please Authorize OAuth.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/utils/error.py", line 47, in make_error_snapshot
+    snapshot = get_snapshot(exception)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/utils/error.py", line 105, in get_snapshot
+    vars = cgitb.scanvars(reader, frame, locals)
+  File "/usr/lib/python3.10/cgitb.py", line 88, in scanvars
+    value = getattr(parent, token, __UNDEF__)
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/doctype/email_queue/email_queue.py", line 257, in smtp_session
+    return self.smtp_server.session
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/smtp.py", line 115, in session
+    Oauth(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 36, in __init__
+    self._validate()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/email/oauth.py", line 45, in _validate
+    frappe.throw(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 525, in throw
+    msgprint(
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 493, in msgprint
+    _raise_exception()
+  File "/home/admin1/Documents/try/frappe-bench/apps/frappe/frappe/__init__.py", line 442, in _raise_exception
+    raise raise_exception(msg)
+frappe.email.oauth.OAuthenticationError: Please Authorize OAuth.
